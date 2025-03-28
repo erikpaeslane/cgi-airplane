@@ -1,0 +1,11 @@
+2025-03-20 19:28:02.559334+02:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE flights (\000d\000aID INT PRIMARY KEY AUTO_INCREMENT,\000d\000a[*])"; expected "identifier"; SQL statement:
+CREATE TABLE flights (
+ID INT PRIMARY KEY AUTO_INCREMENT,
+) [42001-232]
+2025-03-20 19:29:03.385060+02:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE flights (\000d\000aID BIGINT PRIMARY KEY AUTO_INCREMENT,\000d\000adeparture_time TIMESTAMP,\000d\000a[*])"; expected "identifier"; SQL statement:
+CREATE TABLE flights (
+ID BIGINT PRIMARY KEY AUTO_INCREMENT,
+departure_time TIMESTAMP,
+) [42001-232]
