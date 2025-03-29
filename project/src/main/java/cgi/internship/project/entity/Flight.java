@@ -34,6 +34,6 @@ public class Flight {
         this.arrivalTime = arrivalTime;
         this.departurePlace = departureAirport;
         this.arrivalPlace = arrivalPlace;
-        this.seats = SeatsGenerator.fillSeats(4, 25);
+        this.seats = SeatsGenerator.fillSeats(25, 4);
     }
 }
