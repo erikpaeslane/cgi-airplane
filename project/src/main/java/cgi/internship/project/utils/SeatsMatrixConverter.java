@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 
-@Converter
+@Converter(autoApply = true)
 public class SeatsMatrixConverter implements AttributeConverter<boolean[][], String> {
 
     private final ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);

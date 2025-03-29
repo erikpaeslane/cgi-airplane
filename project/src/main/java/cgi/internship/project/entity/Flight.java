@@ -1,5 +1,6 @@
 package cgi.internship.project.entity;
 
+import cgi.internship.project.utils.SeatsGenerator;
 import cgi.internship.project.utils.SeatsMatrixConverter;
 import jakarta.persistence.*;
 import lombok.*;
@@ -24,7 +25,7 @@ public class Flight {
     private String departurePlace;
     @Column(name = "arrival_place")
     private String arrivalPlace;
-    @Column(name = "seats")
+    @Column(name = "seats", columnDefinition = "TEXT")
     @Convert(converter = SeatsMatrixConverter.class)
     private boolean[][] seats;
 
@@ -33,6 +34,6 @@ public class Flight {
         this.arrivalTime = arrivalTime;
         this.departurePlace = departureAirport;
         this.arrivalPlace = arrivalPlace;
-        this.seats = new boolean[4][5];
+        this.seats = SeatsGenerator.fillSeats(4, 25);
     }
 }
