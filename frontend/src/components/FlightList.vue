@@ -12,7 +12,9 @@
           <p><strong>Arrival:</strong> {{ formatDate(flight.arrivalTime) }}</p>
           <p><strong>From:</strong> {{ flight.departurePlace }}</p>
           <p><strong>To:</strong> {{ flight.arrivalPlace }}</p>
-          <button class="select-btn">Select Seat</button>
+          <router-link :to="'/flights/' + flight.id">
+              <button class="select-btn">Broneeri kohad</button>
+            </router-link>
         </div>
       </div>
     </div>

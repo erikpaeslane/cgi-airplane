@@ -4,6 +4,7 @@ import App from './App.vue'
 import * as VueRouter from 'vue-router'
 
 import FlightList from './components/FlightList.vue'
+import FlightDetails from './components/FlightDetails.vue'
 
 const router = VueRouter.createRouter({
     history: VueRouter.createWebHistory(process.env.BASE_URL),
@@ -12,6 +13,10 @@ const router = VueRouter.createRouter({
             path: '/flights',
             component: FlightList
         },
+        {
+            path: '/flights/:id',
+            component: FlightDetails,
+        }
     ],
 });
 

@@ -3,11 +3,9 @@ package cgi.internship.project.service;
 import cgi.internship.project.entity.Flight;
 import cgi.internship.project.mapper.FlightDtoMapper;
 import cgi.internship.project.repository.FlightRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
-import java.util.List;
 
 @Service
 public class FlightService {
@@ -23,5 +21,14 @@ public class FlightService {
     public ResponseEntity<?> getAllFlights() {
         return ResponseEntity.ok(
                 flightRepository.findAll().stream().map(flightDtoMapper::fromFlightToDTO));
+    }
+
+    public ResponseEntity<?> getFlightDetails(long id){
+        Flight flight = flightRepository.findById(id).orElse(null);
+        if (flight == null)
+            return ResponseEntity.notFound().build();
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(flightDtoMapper.fromFlightToDTO(flight));
     }
 }
